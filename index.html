@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="leaflet/leaflet.js"></script>
+		<script src="js/config.js"></script>
+		<script src="js/domhelpers.js"></script>
+		<script src="js/index.js"></script>
+		<link rel="stylesheet" href="leaflet/leaflet.css">
+		<link rel="stylesheet" href="css/common.css">
+		<link rel="stylesheet" href="css/index.css">
+		<title>GTFS Map</title>
+	</head>
+
+	<body class="flex flex-column">
+		<!-- Error displayed in case of script failure -->
+		<span id="error"> </span>
+
+		<!-- Toolbar -->
+		<div id="toolbar" style="display: none;" class="ui flex flex-space-between">
+			<div>
+				<span class="bold">GTFSMap</span>
+				<button id="toggle-stops" title="Browse currently loaded stops" >View Stops</button>
+				<button id="toggle-routes" title="Toggle display of routes" >Select Routes</button>
+			</div>
+
+			<div id="status-lat-lon-zoom" title="Longitude / Lattitude / Zoom"></div>
+		</div>
+
+		<!-- Everything Below Toolbar -->
+		<main class="fill flex overflow-auto">
+
+			<!-- Route Select Sidebar -->
+			<aside id="routes-sidebar" class="sidebar hidden ui overflow-scroll">
+				<h1>Select Routes</h1>
+				<div class="control-container">
+					<button id="clear-routes" class="fill">Clear Routes</button>
+					<p class="bold text-center">Select routes to display on the map</p>
+				</div>
+				<ul id="routes-list"> </ul>
+			</aside>
+
+			<!-- Stop Browser Sidebar -->
+			<aside id="stops-sidebar" class="sidebar hidden ui overflow-scroll">
+				<h1>View Stops</h1>
+
+				<div class="control-container">
+					<div class="flex flex-space-evenly">
+						<label class="block" title="Show color-coded stops along selected transit routes">
+							<input id="show-route-stops" type="checkbox" checked="1">
+							<span> Route </span>
+						</label>
+						<label class="block" title="Show nearby stops when zoomed-in close to the map">
+							<input id="show-nearby-stops" type="checkbox" checked="1">
+							<span> Nearby </span>
+						</label>
+					</div> 
+
+					<input id="filter-stops" class="fill" type="search" placeholder="Filter Stops">
+					<div id="stops-message" class="bold text-center"> </div>
+				</div>
+
+				<ul id="stops-list"></ul>
+			</aside>
+
+			<!-- Slippy Map -->
+			<div id="map" class="fill"></div>
+		</main>
+	</body>
+</html>

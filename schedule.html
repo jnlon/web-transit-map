@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="js/config.js"></script>
+		<script src="js/domhelpers.js"></script>
+		<script src="js/schedule.js"></script>
+		<link rel="stylesheet" href="css/common.css">
+		<link rel="stylesheet" href="css/schedule.css">
+		<title></title>
+	</head>
+
+	<body>
+		<!-- Schedule -->
+		<main id="schedule-screen">
+			<h1 class="text-center" id="schedule-title"></h1>
+			<h2 class="text-center">Arrival Times by Date</h2>
+			<nav id="schedule-nav" class="flex flex-space-between">
+				<button id="schedule-prev">← Prev</button>
+				<input id="schedule-date" type="date" title="Schedule Day (YYYY-MM-DD)" pattern="\d{4}-\d{2}-\d{2}">
+				<button id="schedule-next">Next →</button>
+			</nav>
+			<table id="schedule-table"></table>
+		</main>
+	</body>
+
+</html>

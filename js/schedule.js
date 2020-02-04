@@ -1,3 +1,7 @@
+'use strict';
+// from config.js and domhelpers.js
+/* global qs, qsa, el, el2, CONF, empty */
+
 // retrun true if dates d1 an d2 occur on the same day
 function onSameDay(d1, d2) {
 	return (d1.getDate() == d2.getDate()) &&

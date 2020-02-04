@@ -1,3 +1,7 @@
+'use strict';
+// from config.js and domhelpers.js
+/* global qs, qsa, el, el2, CONF, L, addClass, removeClass, empty */
+
 /************************
 Core Data Structures
 *************************/

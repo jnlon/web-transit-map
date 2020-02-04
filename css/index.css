@@ -6,6 +6,7 @@
 	width: 100%;
 	text-align: left;
 	padding: 6px;
+	border-bottom: solid 1px #d0d0d0;
 }
 
 #status-lat-lon-zoom {
@@ -13,6 +14,11 @@
 	margin-bottom: auto;
 	font-weight: bold;
 	font-size: 10pt;
+}
+
+.title {
+	font-weight: bold;
+	font-size: 12pt;
 }
 
 /************************
@@ -30,7 +36,6 @@
 .sidebar {
 	width: 18em;
 	min-width: 150px;
-	border-right: solid thin gray;
 }
 
 .sidebar h1 {
@@ -151,9 +156,9 @@
 	margin: 1em;
 }
 
-.ui, .leaflet-popup-content-wrapper {
+/*.ui, .leaflet-popup-content-wrapper {
 	background: radial-gradient(#fff, #eee);
-}
+}*/
 
 /************************
 mobile media queries

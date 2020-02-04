@@ -1,0 +1,25 @@
+{
+  "name": "web-transit-map",
+  "version": "0.0.1",
+  "description": "Web Transit Map is a web-based frontend to gtfs-rest",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jnlon/web-transit-map.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jnlon/web-transit-map/issues"
+  },
+  "homepage": "https://github.com/jnlon/web-transit-map#readme",
+  "dependencies": {
+    "leaflet": "^1.6.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0"
+  }
+}

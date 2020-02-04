@@ -52,9 +52,9 @@ function loadSchedule(stop, date) {
 	qs('#schedule-date').addEventListener('change',
 		(e) => loadNewSchedule(stop, parseISODate(e.target.value)));
 	qs('#schedule-next').addEventListener('click',
-		(e) => loadNewSchedule(stop, incDateByDays(date, 1)));
+		() => loadNewSchedule(stop, incDateByDays(date, 1)));
 	qs('#schedule-prev').addEventListener('click', 
-		(e) => loadNewSchedule(stop, incDateByDays(date, -1)));
+		() => loadNewSchedule(stop, incDateByDays(date, -1)));
 
 	// Get 'yyyy-mm-dd' ISO string
 	const isodate = date.toISOString().substring(0, 10)
@@ -118,7 +118,7 @@ function loadSchedule(stop, date) {
 			empty(table);
 
 			// append schedule rows
-			table.append(tableInner);;
+			table.append(tableInner);
 
 			table.classList.remove('loading');
 			// enable controls again

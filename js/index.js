@@ -74,9 +74,11 @@ function Stop(d, color) {
 	const divIcon = el2(
 		'div',
 		[ this.getShortName() ],
-		{ class: 'div-icon-inner',
-		  style: `border-color: ${color}; color: ${color};`,
-		  title: `ID: ${d.stop_id}`}
+		{ 
+			class: 'div-icon-inner',
+			style: `border-color: ${color}; color: ${color};`,
+			title: `ID: ${d.stop_id}`
+		}
 	);
 
 	this.getMarker = () => divIcon;
@@ -204,7 +206,7 @@ function Route(d, color) {
 	const fetchLayer = (api) =>
 		api.fetchRouteLayer(this, (geojson) => {
 			const style = {color: color, weight: 6};
-			const opts = {style: ((f) => style)};
+			const opts = {style: (() => style)};
 			const routeLayer = L.geoJSON(geojson, opts).bindPopup(popupHTML());
 			layer = routeLayer;
 		});
@@ -259,7 +261,7 @@ DOM Wrangling
 *************************/
 
 const hide = (selector) => qs(selector).classList.add('hidden');
-const show = (selector) => qs(selector).classList.remove('hidden');
+//const show = (selector) => qs(selector).classList.remove('hidden');
 const toggle = (selector) => qs(selector).classList.toggle('hidden');
 
 function toggleStopsSidebar() {
@@ -353,7 +355,7 @@ function updateStopsSidebar(api, map, state) {
 function updateNearbyStops(stopsData, api, map, state) {
 	// get a list of stop IDS for layers already on map
 	const activeStopIDs = [].concat(
-		state.routes.map(r => r.getStops().map(s => getStopId())).flat(), // route stop ids
+		state.routes.map(r => r.getStops().map(s => s.getStopId())).flat(), // route stop ids
 		state.stops.map(s => s.getStopId()) // 'nearby' stop ids
 	);
 
